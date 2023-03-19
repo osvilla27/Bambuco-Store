@@ -6,8 +6,8 @@ from .views import ProductApiViewSet, ListCategoriesView
 router_product = DefaultRouter()
 
 
-router_product.register(prefix='product',
-                      basename='product',
+router_product.register(prefix='products',
+                      basename='products',
                       viewset=ProductApiViewSet)
 
 

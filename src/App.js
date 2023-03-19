@@ -1,10 +1,16 @@
-import styled from "styled-components";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "containers/pages/Home";
+import Error404 from "containers/erros/Error404";
 
-const H1 = styled.h1`
-  color: ${({theme}) => theme.bgColors.primary}
-`
 const App = () => {
-  return <H1>Bambuco connect React and Django</H1>;
+  return (
+    <Router>
+      <Routes>
+        <Route path="*" element={<Error404 />} />
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </Router>
+  );
 };
 
 export default App;
