@@ -1,4 +1,4 @@
-import { Container } from "globalStyles";
+import { Container, H5 } from "globalStyles";
 import styled from "styled-components";
 
 export const ProductWrapper = styled(Container)`
@@ -15,22 +15,27 @@ export const ProductWrapper = styled(Container)`
 `;
 
 export const Card = styled.div`
-  height: 350px;
+  height: 400px;
+  margin: 20px 0px;
   h4 {
     padding: 5px 0px;
   }
-  overflow: hidden;
 `;
 
 export const Content = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  display: flex;
+  justify-content: space-between;
   padding: 5px 0px;
 `;
 
+export const Compare = styled(H5)`
+  text-decoration:line-through;
+  margin-right: 10px; 
+`;
+
+
 export const Image = styled.img`
-  height: 280px;
+  height: 350px;
   width : 100%;
   object-fit: cover;
 `;

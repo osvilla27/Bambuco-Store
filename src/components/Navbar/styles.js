@@ -1,11 +1,10 @@
 import { Section } from "globalStyles";
 import styled from "styled-components";
 
-
 export const NavbarWrapper = styled(Section)`
-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+`;
 
-`
 export const Navigation = styled.header`
   width: 100%;
   overflow: hidden;
@@ -58,5 +57,9 @@ export const Ul = styled.ul`
 
 export const Li = styled.li`
   padding: 0px 10px;
-  color: red
+  color: red;
+`;
+
+export const Logo = styled.div`
+  display: flex;
 `;

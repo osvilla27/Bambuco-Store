@@ -1,9 +1,9 @@
-import { H1, H5, P, Section } from "globalStyles";
+import { H4, H5, P, Section } from "globalStyles";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { FaArrowRight } from "react-icons/fa";
 import { fetchProducts } from "../../store";
-import { Card, Content, Image, ProductWrapper } from "./styles";
-
+import { Card, Compare, Content, Image, ProductWrapper } from "./styles";
 
 const ProductsList = () => {
   const dispatch = useDispatch();
@@ -24,9 +24,13 @@ const ProductsList = () => {
             <P>{product.name}</P>
           </Content>
           <Content>
-            <H5> <span>${product.compare_price}</span></H5>
+            <Compare>${product.compare_price}</Compare>
             <H5 color="primary">${product.price}</H5>
           </Content>
+        </Content>
+        <Content>
+          <H4 color="primary">Ver más detalles</H4>
+          <FaArrowRight />
         </Content>
       </Card>
     );

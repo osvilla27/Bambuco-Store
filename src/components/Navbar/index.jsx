@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { FaAlignRight } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
-import { Button, Container } from "globalStyles";
-import { Li, Nav, NavbarWrapper, Navigation, Ul } from "./styles";
+import { Button, Container, H3 } from "globalStyles";
+import { Li, Logo, Nav, NavbarWrapper, Navigation, Ul } from "./styles";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -17,7 +17,9 @@ const Navbar = () => {
       <Container>
         <Navigation>
           <Nav>
-            <h1>Bambuco</h1>
+            <Logo>
+              <H3 color="dark">Bambuco</H3>&emsp;<H3 gradient>Store</H3>
+            </Logo>
             <Ul className={open ? `active` : `navlinks`}>
               <Li>
                 <Link to={`#`}>Inicio</Link>
@@ -29,7 +31,7 @@ const Navbar = () => {
                 <Link to={`#`}>Contacto</Link>
               </Li>
             </Ul>
-            <Button>Iniciara Sesión</Button>
+            <Button>Iniciar Sesión</Button>
             {open ? (
               <AiOutlineClose className="hamburger" onClick={handleClick} />
             ) : (

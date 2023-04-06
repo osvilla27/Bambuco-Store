@@ -2,7 +2,7 @@ import { Copyright, FooterLinks, FooterWrapper } from "./styles";
 import { Link } from "react-router-dom";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
-import { Button, Container } from "globalStyles";
+import { Button, Container, H3 } from "globalStyles";
 
 const Footer = () => {
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="footer_inner">
             <FooterLinks>
               <div className="footer-top">
-                <div className="logo">Bambuco</div>
+                <H3 gradient>BAMBUCO</H3>
                 <div className="social-icons">
                   <FaFacebookSquare />
                   <FaInstagramSquare />
