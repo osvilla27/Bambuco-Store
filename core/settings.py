@@ -54,9 +54,14 @@ PROJECT_APPS = [
 
 ECOMMERCE_APPS = [
     'apps.product',
+    'apps.landing',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS + ECOMMERCE_APPS
+
+####################################
+##  CKEDITOR CONFIGURATION ##
+####################################
 
 CKEDITOR_CONFIGS = {
     'default': {
@@ -66,6 +71,8 @@ CKEDITOR_CONFIGS = {
 }
 
 CKEDITOR_UPLOAD_PATH = "/media/"
+
+###################################
 
 
 MIDDLEWARE = [
