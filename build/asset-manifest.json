@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.js": "/static/js/main.f95073b9.js",
+    "main.js": "/static/js/main.b323d15b.js",
+    "static/media/colagebari_sin_fondo_1.png": "/static/media/colagebari_sin_fondo_1.935ac394536b29d9ce2c.png",
     "index.html": "/index.html",
-    "main.f95073b9.js.map": "/static/js/main.f95073b9.js.map"
+    "main.b323d15b.js.map": "/static/js/main.b323d15b.js.map"
   },
   "entrypoints": [
-    "static/js/main.f95073b9.js"
+    "static/js/main.b323d15b.js"
   ]
 }

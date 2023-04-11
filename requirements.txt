@@ -13,3 +13,8 @@ sqlparse
 tzdata
 whitenoise
 gunicorn
+pillow
+djangorestframework-simplejwt
+django-ckeditor
+django-filter
+django-admin-thumbnails

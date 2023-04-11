@@ -43,13 +43,37 @@ THIRD_PARTY_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework_simplejwt',
+    'ckeditor',
+    'ckeditor_uploader',
+    'django_filters',
 ]
 
 PROJECT_APPS = [
     'apps.user',
 ]
 
-INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
+ECOMMERCE_APPS = [
+    'apps.product',
+    'apps.landing',
+]
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS + ECOMMERCE_APPS
+
+####################################
+##  CKEDITOR CONFIGURATION ##
+####################################
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'autoParagraph': False
+    }
+}
+
+CKEDITOR_UPLOAD_PATH = "/media/"
+
+###################################
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -87,18 +111,18 @@ AUTH_USER_MODEL="user.UserAccount"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
-#     "default": env.db("DATABASE_URL"),
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
 # }
 
-# DATABASES["default"]["ATOMIC_REQUESTS"] = True
+DATABASES = {
+    "default": env.db("DATABASE_URL"),
+}
+
+DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -133,6 +157,8 @@ TIME_ZONE = 'America/Bogota'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
+
+DEFAULT_CURRENCY = 'COP'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
