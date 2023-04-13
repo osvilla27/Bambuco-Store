@@ -1,9 +1,20 @@
 import { useState } from "react";
 import { FaAlignRight } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
+import { CiShoppingCart } from "react-icons/ci";
+import { CiUser } from "react-icons/ci";
 import { Button, Container, H3 } from "globalStyles";
-import { Li, Logo, Nav, NavbarWrapper, Navigation, Ul } from "./styles";
+import {
+  Content,
+  Li,
+  Logo,
+  Nav,
+  NavbarWrapper,
+  Navigation,
+  Ul,
+} from "./styles";
 import { Link } from "react-router-dom";
+import Input from "components/Input";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -18,11 +29,11 @@ const Navbar = () => {
         <Navigation>
           <Nav>
             <Logo>
-              <H3 color="dark">Bambuco</H3>&emsp;<H3 gradient>Store</H3>
+              <H3 color="dark">Bambuco Store</H3>
             </Logo>
             <Ul className={open ? `active` : `navlinks`}>
               <Li>
-                <Link to={`#`}>Inicio</Link>
+                <Link to={`#`}>Tienda</Link>
               </Li>
               <Li>
                 <Link to={`#`}>Sobre Nosotros</Link>
@@ -31,7 +42,12 @@ const Navbar = () => {
                 <Link to={`#`}>Contacto</Link>
               </Li>
             </Ul>
-            <Button>Iniciar Sesión</Button>
+            <Content>
+              <Input icon="Buscar" placeholder="Buscar" />
+              <CiShoppingCart size="20px" />
+              <CiUser size="20px" />
+            </Content>
+
             {open ? (
               <AiOutlineClose className="hamburger" onClick={handleClick} />
             ) : (

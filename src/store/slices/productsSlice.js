@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchProducts } from "../thunk/fetchProducts";
+import { fetchProducts, fetchProductsLanding } from "../thunk/fetchProducts";
 
 const initialState = {
   isLoding: false,
   productList: [],
+  productsLandingList: [],
   error: null,
 };
 
@@ -19,6 +20,17 @@ const productsSlice = createSlice({
       state.isLoding = false;
     });
     builder.addCase(fetchProducts.rejected, (state, action) => {
+      state.error = action.payload;
+      state.isLoding = false;
+    });
+    builder.addCase(fetchProductsLanding.pending, (state) => {
+      state.isLoding = true;
+    });
+    builder.addCase(fetchProductsLanding.fulfilled, (state, action) => {
+      state.productsLandingList = action.payload;
+      state.isLoding = false;
+    });
+    builder.addCase(fetchProductsLanding.rejected, (state, action) => {
       state.error = action.payload;
       state.isLoding = false;
     });

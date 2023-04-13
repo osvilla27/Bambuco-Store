@@ -43,6 +43,7 @@ class Product(models.Model):
         ('Size', 'Talla'),
         ('Color', 'Color'),
         ('Size-Color', 'Talla-Color'),
+        ('Landing', 'Landing'),
     )
 
     category = models.ForeignKey(

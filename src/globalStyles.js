@@ -12,7 +12,6 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
-    
  }
  a{
 	color: ${({ theme }) => theme.COLORS.dark};
@@ -49,6 +48,8 @@ export const H1 = styled.h1`
   }
   ${(props) => {
     switch (props.color) {
+      case "primary":
+        return `color: ${props.theme.COLORS.primary};`;
       case "secondary":
         return `color: ${props.theme.COLORS.secondary};`;
       case "info":
@@ -61,12 +62,10 @@ export const H1 = styled.h1`
         return `color: ${props.theme.COLORS.danger};`;
       case "light":
         return `color: ${props.theme.COLORS.light};`;
-      case "dark":
-        return `color: ${props.theme.COLORS.dark};`;
       case "white":
         return `color: ${props.theme.COLORS.white};`;
       default:
-        return `color: ${props.theme.COLORS.primary};`;
+        return `color: ${props.theme.COLORS.dark};`;
     }
   }};
   ${(props) =>
@@ -130,7 +129,7 @@ export const P = styled.p`
       case "white":
         return `color: ${props.theme.COLORS.white};`;
       default:
-        return "color: #67748e";
+        return `color: ${props.theme.COLORS.gray};`;
     }
   }}
   line-height: 1.6;
@@ -215,12 +214,34 @@ export const Blur = styled.div`
   width: 200px;
   height: 100px;
   border-radius: 5px;
-  box-shadow: 0 10px 30px #000;
+  box-shadow: 0 0.125rem 1.75rem 0 rgba(0, 0, 0, 0.09);
   backdrop-filter: blur(10px);
   border: 1px solid #ffffff40;
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: saturate(80%) blur(15px);
   background-color: rbga(243, 243, 243, 0.2);
+`;
+
+export const Input = styled.input.attrs((props) => ({
+  type: props.type,
+  size: props.size || "1em",
+}))`
+  margin: 5px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: ${(props) => (props.isActive ? "1.5px" : "1px")};
+  border-color: ${(props) =>
+    props.isActive ? props.theme.COLORS.black : props.theme.COLORS.gray};
+  font-size: ${(props) => props.theme.SIZES.h5}px;
+  color: ${(props) => props.theme.COLORS.black};
+  padding: 8px;
+  ${(props) => props.icon && "padding-left: 35px"};
+
+  :focus {
+    border-color: red;
+    box-shadow: 0 0.125rem 1.75rem 0 rgba(0, 0, 0, 0.09);
+  }
 `;
 
 export default GlobalStyle;

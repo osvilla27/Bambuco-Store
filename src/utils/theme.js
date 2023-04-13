@@ -6,7 +6,7 @@ const COLORS = {
   black: "#252F40",
   white: "#FFFFFF",
   dark: "#252F40",
-  light: "#E9ECEF",
+  light: "#F8F9Fa",
   gray: "#A7A8AE",
   danger: "#EA0606",
   warning: "#FFC107",
@@ -19,10 +19,10 @@ const COLORS = {
 const SIZES = {
   h1: 48,
   h2: 38,
-  h3: 32,
+  h3: 28,
   h4: 22,
   h5: 16,
-  p: 16,
+  p: 14,
 };
 
 const GRADIENTS = {
