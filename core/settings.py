@@ -15,14 +15,18 @@ DEBUG = 'RENDER' not in os.environ
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
+    "bambuco.onrender.com",
+    "*"
 ]
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
+    "https://bambuco.onrender.com"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:3000',
+    "https://bambuco.onrender.com"
 ]
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
