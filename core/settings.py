@@ -16,17 +16,23 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
     "bambuco.onrender.com",
-    "*"
+    ".bambuco.onrender.com"
 ]
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
-    "https://bambuco.onrender.com"
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+    'http://127.0.0.1:3000',
+    'https://bambuco.onrender.com',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:3000',
-    "https://bambuco.onrender.com"
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+    'http://127.0.0.1:3000',
+    'https://bambuco.onrender.com',
 ]
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')

@@ -28,7 +28,7 @@ const Input = ({
       <CommonInput
         label="label"
         placeholder={placeholder}
-        onChangeText={onChange}
+        //onChangeText={onChange}
         secureTextEntry={secure}
         keyboardType={type}
         //placeholderTextColor={COLORS.gray}
