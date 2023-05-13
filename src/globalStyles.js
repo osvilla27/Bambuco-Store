@@ -35,6 +35,8 @@ export const Container = styled.div`
   }
 `;
 
+
+
 // Typography styles
 
 export const H1 = styled.h1`
@@ -243,5 +245,7 @@ export const Input = styled.input.attrs((props) => ({
     box-shadow: 0 0.125rem 1.75rem 0 rgba(0, 0, 0, 0.09);
   }
 `;
+
+
 
 export default GlobalStyle;

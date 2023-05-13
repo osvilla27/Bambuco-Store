@@ -1,8 +1,15 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductsLanding } from "../../store";
-import { Container, H3, H4, H5, P, Section } from "globalStyles";
-import { ButtonBlur, Card, Compare, Content, Image, LandingWrapper } from "./styles";
+import { Container, H3, H5, P, Section } from "globalStyles";
+import {
+  ButtonBlur,
+  Card,
+  Compare,
+  Content,
+  Image,
+  LandingWrapper,
+} from "./styles";
 import { FaArrowRight } from "react-icons/fa";
 
 const LandingList = () => {
@@ -19,7 +26,8 @@ const LandingList = () => {
     return (
       <Card key={product.id}>
         <ButtonBlur>
-          <H5 color="white">Ver más detalles </H5> &emsp;<FaArrowRight color="white" /> 
+          <H5 color="white">Ver más detalles </H5> &emsp;
+          <FaArrowRight color="white" />
         </ButtonBlur>
         <Image src={product.image} alt={product.name} />
         <Content>
@@ -31,7 +39,6 @@ const LandingList = () => {
             <H5 color="primary">${product.price}</H5>
           </Content>
         </Content>
-        
       </Card>
     );
   });

@@ -5,6 +5,8 @@ import LandingList from "components/LandingList";
 
 
 const Home = () => {
+
+  document.title = "Banbuco Store";
   return (
     <>
       <FullWidthLayout>
