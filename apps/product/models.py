@@ -1,7 +1,13 @@
 from django.db import models
 from django.utils.safestring import mark_safe
 from ckeditor_uploader.fields import RichTextUploadingField
+import os
 
+
+def get_product_image_path(instance, filename):
+    ext = filename.split('.')[-1]
+    filename = "%s.%s" % (instance.id, ext)
+    return os.path.join('photos/products', filename)
 
 class Category(models.Model):
     STATUS = (
@@ -52,7 +58,7 @@ class Product(models.Model):
     keywords = models.CharField(max_length=255, blank=True)
     description = models.TextField(max_length=255, verbose_name='descripción')
     image = models.ImageField(
-        upload_to='photos/products', null=False, verbose_name='imagen')
+        upload_to=get_product_image_path, null=False, verbose_name='imagen')
     price = models.IntegerField(default=0, verbose_name='precio')
     compare_price = models.IntegerField(
         default=0, verbose_name='compare precio')
@@ -86,7 +92,7 @@ class Images(models.Model):
         Product, on_delete=models.CASCADE, verbose_name='producto')
     name = models.CharField(max_length=50, blank=True, verbose_name='nombre')
     image = models.ImageField(
-        blank=True, upload_to='photos/products', verbose_name='imagen')
+        blank=True, upload_to=get_product_image_path, verbose_name='imagen')
 
     class Meta:
         verbose_name = 'Imagen'

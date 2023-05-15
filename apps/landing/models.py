@@ -2,6 +2,13 @@ from django.db import models
 from django.utils.safestring import mark_safe
 from ckeditor_uploader.fields import RichTextUploadingField
 from apps.product.models import Product
+import os
+
+
+def get_landing_image_path(instance, filename):
+    ext = filename.split('.')[-1]
+    filename = "%s.%s" % (instance.id, ext)
+    return os.path.join('photos/landing', filename)
 
 
 class Landing(models.Model):
@@ -14,8 +21,8 @@ class Landing(models.Model):
         Product,
         on_delete=models.CASCADE,
         verbose_name='producto')
-    imagepage_1 = models.ImageField(upload_to='photos/landing', null=False,)
-    imagepage_2 = models.ImageField(upload_to='photos/landing', null=False,)
+    imagepage_1 = models.ImageField(upload_to=get_landing_image_path, null=False,)
+    imagepage_2 = models.ImageField(upload_to=get_landing_image_path, null=False,)
     detail = RichTextUploadingField(verbose_name='detalles')
     status = models.CharField(
         max_length=10, choices=STATUS, verbose_name='estado')
@@ -42,7 +49,7 @@ class Feature(models.Model):
     description = models.TextField(
         max_length=500, blank=True, verbose_name="descripción")
     image_f = models.ImageField(
-        upload_to='photos/landing', null=True, verbose_name='imagen')
+        upload_to=get_landing_image_path, null=True, verbose_name='imagen')
     
     def image_tag(self):
         if self.image_f.url is not None:

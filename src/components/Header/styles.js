@@ -2,9 +2,11 @@ import { Container, Section } from "globalStyles";
 import styled from "styled-components";
 
 export const HeaderWrapper = styled(Section)`
-  position: fixed;
+  position:fixed;
+  width:100%;
   top: 0;
-  left: 0;
+  left:0;
+  z-index:1000;
   background-color: ${({ theme }) => theme.COLORS.white};
   box-shadow: 0 0.125rem 1.75rem 0 rgba(0, 0, 0, 0.09);
 `;
@@ -15,7 +17,6 @@ export const ContentWrapper = styled(Container)`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  z-index: 1;
 
   .close {
     color: black;

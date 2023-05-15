@@ -18,3 +18,4 @@ djangorestframework-simplejwt
 django-ckeditor
 django-filter
 django-admin-thumbnails
+django-cloudinary-storage

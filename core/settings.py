@@ -56,6 +56,7 @@ THIRD_PARTY_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'django_filters',
+    'cloudinary_storage',
 ]
 
 PROJECT_APPS = [
@@ -173,11 +174,18 @@ DEFAULT_CURRENCY = 'COP'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = '/static/'
 
-if not DEBUG:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# CLOUDINARY
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('CLOUD_NAME'),
+    'API_KEY': os.environ.get('API_KEY'),
+    'API_SECRET': os.environ.get('API_SECRET')
+}
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
